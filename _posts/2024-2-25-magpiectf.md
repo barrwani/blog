@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  MagpieCTF
-categories: [CTF Writeup, crypto]
+categories: [CTF, crypto]
 ---
 # MagpieCTF Writeups
 
