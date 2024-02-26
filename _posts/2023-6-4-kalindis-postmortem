@@ -1,10 +1,16 @@
+---
+layout: post
+title:  Reflecting on our first 'major' release - Kalindis Postmortem
+categories: [gamedev, postmortem]
+---
+
 Kalindis is a mobile game my indie game 'studio', Nahar Studios (https://nahar.dev/) released back in April of 2021. It was our first (and currently only) 'major' (relative to what we've made before) release as a studio and garnered around 50 downloads (not bad for a first project!) and an average 4.9 stars on the Play Store. The game revolved around a jellyfish trying to escape the growing darkness rising below, and the main mechanic to do so involved collecting stars to replenish your jumps, as you’d lose them every time you jumped. The goal for this project was to get used to making a larger scale project as a team, as we’d typically made game jam projects and never dipped our toes into anything that took longer than week to make.
 
 I’m writing a post-mortem now because I feel like I never actually reflected on the project post-release, and we’re struggling to get another big project started up so it may give us some insight as to what worked well and what didn’t the first time. Hopefully this is insightful to any other hobbyist game devs, especially those who are still getting started out on bigger, non-jam projects, or interested in journeying into mobile game dev.
 
 We worked with the Godot Engine and opted for a 3D animated model as a 2D sprite. Essentially, we just modelled and animated everything, then rendered each frame as a PNG which we imported into the engine. We did our project management on Trello, held most updates and major discussions over discord, and we all typically worked from home while juggling high school work. It was our first mobile game, our first major project, and it took about 6 months to make from ideation to release.
 
-Part I - What went well:
+## Part I - What went well
 
 Kalindis was definitely a project we take a lot of pride in, having released the game while most of us were still in high school. It almost felt like a really polished, genuinely well-made mobile game you might find on the app store charts, although it definitely wasn’t perfect. The gameplay loop was simple and satisfying, although difficulty progression was nowhere near perfect, the visual identity and theming were consistent and well-polished and the music and SFX were satisfying and fit the vibe we were going for really well. Handing the game to a friend would almost always garner the reaction “You made this?!” which, as you’d imagine, would be a huge ego boost for a teenager on their first major project. We had only made lower quality jam games before this point, so achieving this level of polish and scale on our first project was a huge achievement. We even managed to push out an update to the game which brought in a leaderboard system, although there were (and still are) some issues with that.
 
@@ -12,7 +18,7 @@ We had a strong idea of what we wanted the game to be from start to finish. It f
 
 We were also reached out to by Lion Studios, a huge mobile game publisher owned by Applovin, who were interested in publishing the game for us and running some marketing campaigns, although we rejected that offer before it got anywhere. I'm not sure how common these offers are for mobile games, so we may have passed up on a really good deal....
 
-Part II – What went…not so well:
+## Part II – What went…not so well
 
 Kalindis’ gameplay loop was satisfying, but it got worn out quickly without the introduction of many varying challenges and obstacles past the 20-point mark. It was simple, sure, but the gameplay progression of just making jumps a bit harder to reach as the game progressed wasn’t enough to entice players to keep playing, and oddly enough, it resulted in a weird soft barrier around the 40-point mark where the difficulty spiked. Once that was cleared, the game got easy again though. A lot of polish and playtesting was needed in the overall gameplay loop, which we evidently didn’t end up doing enough of. Admittedly, I got too lazy when it came to playing the game long enough to reach the higher numbers, so that was definitely a point worth getting play testers to run through.
 
@@ -30,11 +36,11 @@ We initially planned to launch for iOS and Android at the same time, but because
 
 The Play Store was much more cooperative, with the build we submitted being approved in less than a week, and subsequent updates being approved almost instantly.
 
-Part III – What to take forward:
+## Part III – What to take forward
 
 I hold a lot of love for Kalindis. Certain quality of life features and unfulfilled promises kind of held it back in the end from being a perfect first ‘big’ game to me, but it definitely means a lot to me regardless. It’s been two years since, and I have yet to work on a project as big as Kalindis. We spent 6 straight months working on it, from coming up with game design elements in paint on discord calls in the beginning to polishing the way the trajectory worked towards the end, we always had something to do, and always worked hard to try and get the game done. I’m still so proud of what we were able to accomplish with the project, but I really wish we had done a few things differently to take the game from good to great. Simple things like not introducing currency/skins without having any skins to show for it, animating the UI a bit, spending a bit more time on getting that leaderboard to do at least one thing right, giving the freeze moon mechanic some kind of visual indication for when it’s active rather than just audio, and not giving up so early on the iOS publishing. We definitely should’ve play tested more before release, and not give ourselves a deadline by announcing it to the public…. (Although the public was mainly our friends and family, it was enough for us to feel the pressure lol) In any case, we made a great game we should be proud of, and I’m glad we got it out there, despite its flaws.
 
-Part IV – Lessons Learned:
+## Part IV – Lessons Learned
 
 I’ll keep this section simple:
 
@@ -52,4 +58,4 @@ I’ll keep this section simple:
 
 I hope this is even a little bit insightful to someone! My memory is a bit hazy since it has been a couple years since we’ve touched the project, but I’ll do my best to answer any questions you may have!
 
-Here's a link to the game: https://play.google.com/store/apps/details?id=com.nahar.kalindis&hl=en&gl=US
+Here's a link to the game: [play.google.com/.../kalindis](https://play.google.com/store/apps/details?id=com.nahar.kalindis&hl=en&gl=US)
