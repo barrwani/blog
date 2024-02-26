@@ -6,7 +6,7 @@ permalink: /about/
 
 ## barwani
 
-Co-Founded Nahar Entertainment; an indie game development studio; in late 2019 [nahar.dev](https://nahar.dev/).
+Co-Founded Nahar Studios; an indie game development studio; in late 2019: [nahar.dev](https://nahar.dev/).
 
 Currently leading a team of 15 as a Project Manager and Lead Developer for the studio, as well as taking a Bachelor of Arts in Computer Science and Linguistics at NYU's College of Arts & Sciences.
 
