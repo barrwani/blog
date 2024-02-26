@@ -4,7 +4,11 @@ title: About
 permalink: /about/
 ---
 
-## barwani
+## Blog
+
+This blog is where I share my CTF writeups, devlogs, postmortems, tutorials, and anything else I feel it worth posting here. Contact me at: asaad[dot]barwani[at]gmail[dot]com :)
+
+## ~barwani
 
 Co-Founded Nahar Studios; an indie game development studio; in late 2019: [nahar.dev](https://nahar.dev/).
 
@@ -17,6 +21,4 @@ For my itch.io: [barwani.itch.io](https://barwani.itch.io)
 Lab member of NYU's [OSIRIS Cybersecurity Lab](https://osiris.cyber.nyu.edu/).
 
 
-## The Blog
 
-This blog is where I share my CTF writeups, devlogs, postmortems, tutorials, and anything else I feel it worth posting here. Contact me at: asaad[dot]barwani[at]gmail[dot]com :)
