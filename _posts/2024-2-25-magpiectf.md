@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  MagpieCTF
+title:  MagpieCTF24 Writeups
 categories: [ctf, crypto]
 ---
 {%- include mathjax.html -%}
