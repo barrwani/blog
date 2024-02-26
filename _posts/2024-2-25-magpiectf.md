@@ -23,9 +23,9 @@ uNj/X6ZzFZ7kVmZ4IV992KQA5SxBXFs4fnHwnDtXWRk1PCy5tm4/ciZWLF1WMm093gUPAXCG
 kONh88rhEjpX7Yi07iA2ePT+6Uzu1Pzm2M4= ”
 ```
 
-I read the pdf and noticed that the capital letters in the pdf spell out ROT, which is another word for a Caesar cipher.
+I read the pdf and noticed that the capital letters in the pdf's readable text spell out ROT (rotation), which is another word for a Caesar cipher.
 
-The number 13 was mentioned so I tried a caesar 13 shift, obtaining this:
+The number 13 was mentioned so I tried a Caesar 13 shift, obtaining this:
 
 ```
 the future Depends on thE paSt. we must eliminate the founder;
@@ -33,7 +33,7 @@ hAw/K6MmSM7xIzM4VI992XDN5FkOKSf4saUjaQgKJEx1CPl5gz4/pvMJYS1JZz093tHCNKPT
 xBAu88euRwcK7Lv07vN2rCG+6Hmh1Cmz2Z4=
 ```
 
-Again, the capital letters spell out: DES
+Again, the capital letters in the readable text spell out: DES
 
 Put `hAw/K6MmSM7xIzM4VI992XDN5FkOKSf4saUjaQgKJEx1CPl5gz4/pvMJYS1JZz093tHCNKPT
 xBAu88euRwcK7Lv07vN2rCG+6Hmh1Cmz2Z4=` through a DES decrypter with no key:
@@ -42,11 +42,11 @@ xBAu88euRwcK7Lv07vN2rCG+6Hmh1Cmz2Z4=` through a DES decrypter with no key:
 tHe father Is paraLLel to the founder. 22 3 9 6; eevogs{nizy135_wjzpsk3_1791}
 ```
 
-We finally have a flag (kind of).
+We finally have a flag (kind of): `eevogs{nizy135_wjzpsk3_1791}`
 
-One more time, the capital letters spell out: HILL
+One more time, the capital letters in the readable text spell out: HILL
 
-Put the encrypted flag through HILL Cipher Decrypter with the matrix values `{22,3,9,6}`:
+Put the encrypted flag through HILL Cipher Decrypter with the matrix values ${22,3,9,6}$:
 
 `magpie{char135_babbag3_1791}`
 
@@ -56,32 +56,32 @@ Fun little challenge!
 
 In this challenge, we're given `server.py` and `signature.py`, and when we netcat to the server we're prompted to enter the private key to get the flag.
 
-The basic setup is an ECDSA (Elliptic Curve Digital Signature Algorithm) where you're given a public key pair `(x,y)`, two hashed messages `hint`, which are basically just random alphabet strings hashed using some hidden hash function, and `signatures` with the 2 signature pairs for those messages.
+The basic setup is an ECDSA (Elliptic Curve Digital Signature Algorithm) where you're given a public key pair $(x,y)$, two hashed messages `hint`, which are basically just random alphabet strings hashed using some hidden hash function, and `signatures` with the 2 signature pairs for those messages.
 
 Within the `signature.py` code we have:
-\(p = 1157920892103562487626974469494075735300861434152903141955\)
+$p = 1157920892103562487626974469494075735300861434152903141955$
 
-\(G = ECC.EccPoint(0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296, 0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5, 'P-256')\) (base point)
+$G = ECC.EccPoint(0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296, 0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5, 'P-256')$ (base point)
 
-\(n = 115792089210356248762697446949407573529996955224135760342422259061068512044369\) (order of the curve)
+$n = 115792089210356248762697446949407573529996955224135760342422259061068512044369$(order of the curve)
 
 Which may or may not be useful...
 
 The basic steps of ECDSA are as follows:
 
-- Select a random nonce \(k$ from \([1,n-1]\)
-- Compute a point \(P= kG\)
-- Set \(r\) as the \(x\)-coord of \(P mod n\)
-- Compute \(s= k^{-1} (H(m)+dr) \text{mod } n\), where \(H(m)\) is the hash of  message \(m\)
+- Select a random nonce $k$ from $[1,n-1]$
+- Compute a point $P= kG$
+- Set $r$ as the $x$-coord of $P mod n$
+- Compute $s= k^{-1} (H(m)+dr) \text{mod } n$, where $H(m)$ is the hash of  message $m$
 
 
 I looked into common ECDSA exploits, and when looking through the `signature.py` script you find that they're using the same (hidden) `k` nonce on two different messages (the hints). The nonce is only meant to be used once (its in the name, number once...), so reusing it leads to a major vulnerability.
 
-We have two signatures for two messages, and our public key `Q=dG`, we can get two equations and solve for `d`:
-`s_1 = k^{-1}(H(m_1)+dr) mod n`
-`s_2 = k^{-1}(H(m_2)+dr) mod n`
+We have two signatures for two messages, and our public key $Q=dG$, we can get two equations and solve for $d$:
+$s_1 = k^{-1}(H(m_1)+dr) \text{mod }n$
+$s_2 = k^{-1}(H(m_2)+dr) \text{mod }n$
 
-`d = (r(s_1-s_2))^-1 * (s_2*H(m_1)- s_1*(H(m_2)) mod n`
+$d = (r(s_1-s_2))^-1 * (s_2*H(m_1)- s_1*(H(m_2)) \text{mod }n$
 
 As this is a known issue, there was some readily available code to use: [Marsh61/ECDSA-Nonce-Reuse-Exploit-Example](https://github.com/Marsh61/ECDSA-Nonce-Reuse-Exploit-Example)
 
