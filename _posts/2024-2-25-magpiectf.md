@@ -56,32 +56,32 @@ Fun little challenge!
 
 In this challenge, we're given `server.py` and `signature.py`, and when we netcat to the server we're prompted to enter the private key to get the flag.
 
-The basic setup is an ECDSA (Elliptic Curve Digital Signature Algorithm) where you're given a public key pair $(x,y)$, two hashed messages `hint`, which are basically just random alphabet strings hashed using some hidden hash function, and `signatures` with the 2 signature pairs for those messages.
+The basic setup is an ECDSA (Elliptic Curve Digital Signature Algorithm) where you're given a public key pair <span>$(x,y)$</span>, two hashed messages `hint`, which are basically just random alphabet strings hashed using some hidden hash function, and `signatures` with the 2 signature pairs for those messages.
 
 Within the `signature.py` code we have:
-$p = 1157920892103562487626974469494075735300861434152903141955$
+<span>$p = 1157920892103562487626974469494075735300861434152903141955$</span>
 
-$G = ECC.EccPoint(0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296, 0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5, 'P-256')$ (base point)
+<span>$G = ECC.EccPoint(0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296, 0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5, 'P-256')$</span> (base point)
 
-$n = 115792089210356248762697446949407573529996955224135760342422259061068512044369$(order of the curve)
+<span>$n = 115792089210356248762697446949407573529996955224135760342422259061068512044369$</span>(order of the curve)
 
 Which may or may not be useful...
 
 The basic steps of ECDSA are as follows:
 
-- Select a random nonce $k$ from $[1,n-1]$
-- Compute a point $P= kG$
-- Set $r$ as the $x$-coord of $P mod n$
-- Compute $s= k^{-1} (H(m)+dr) \text{mod } n$, where $H(m)$ is the hash of  message $m$
+- Select a random nonce <span>k</span> from <span>$[1,n-1]$</span>
+- Compute a point <span>$P= kG$</span>
+- Set <span>$r$</span> as the <span>$x$</span>-coord of <span>$P mod n$</span>
+- Compute <span>$s= k^{-1} (H(m)+dr) \text{mod } n$</span>, where <span>$H(m)$</span> is the hash of  message <span>m</span>
 
 
-I looked into common ECDSA exploits, and when looking through the `signature.py` script you find that they're using the same (hidden) `k` nonce on two different messages (the hints). The nonce is only meant to be used once (its in the name, number once...), so reusing it leads to a major vulnerability.
+I looked into common ECDSA exploits, and when looking through the `signature.py` script you find that they're using the same (hidden) <span>$k$</span> nonce on two different messages (the hints). The nonce is only meant to be used once (its in the name, number once...), so reusing it leads to a major vulnerability.
 
-We have two signatures for two messages, and our public key $Q=dG$, we can get two equations and solve for $d$:
-$s_1 = k^{-1}(H(m_1)+dr) \text{mod }n$
-$s_2 = k^{-1}(H(m_2)+dr) \text{mod }n$
+We have two signatures for two messages, and our public key $Q=dG$, we can get two equations and solve for <span>$d$</span>:
+<span>$s_1 = k^{-1}(H(m_1)+dr) \text{mod }n$</span>
+<span>$s_2 = k^{-1}(H(m_2)+dr) \text{mod }n$</span>
 
-$d = (r(s_1-s_2))^-1 * (s_2*H(m_1)- s_1*(H(m_2)) \text{mod }n$
+<span>$d = (r(s_1-s_2))^-1 * (s_2*H(m_1)- s_1*(H(m_2)) \text{mod }n$</span>
 
 As this is a known issue, there was some readily available code to use: [Marsh61/ECDSA-Nonce-Reuse-Exploit-Example](https://github.com/Marsh61/ECDSA-Nonce-Reuse-Exploit-Example)
 
