@@ -7,7 +7,7 @@ categories: [CTF, crypto]
 I recently got the chance to take part in a CTF Event hosted by the Information Security Club from the [University of Calgary](https://magpiectf.ca/) with the [OSIRIS Lab](https://osiris.cyber.nyu.edu/). Here are my writeups for a couple of the challenges I solved. 
 
 
-## Rewind:
+## Rewind
 
 In this challenge, you're given a pdf with the following contents:
 
