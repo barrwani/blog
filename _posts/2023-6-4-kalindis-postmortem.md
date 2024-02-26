@@ -32,7 +32,7 @@ Of course, the skins never came. The team worked on some, but we never ended up 
 
 For now, and forever, the skin shop will remain saying “Coming soon”.
 
-We initially planned to launch for iOS and Android at the same time, but because of the annoying requirements needed to publish on iOS, we had to release on Android first to meet the announcement date of April. iOS proved to be a big headache, since you needed to do all the publishing stuff on Xcode to get it up on the store, which you can only do on a Mac (which I didn’t own). I had to borrow someone else’s, and even after doing all of the publishing setup on Xcode and submitting it for review, I couldn’t get it up because it would crash on certain iPad models. We didn’t even want to put the game on iPad, so I had a bit of a back and forth with the App Store representative before I opted to give up, since I know nothing about Godot Engine to iPad optimization, nor did I have an iPad to test with.
+We initially planned to launch for iOS and Android at the same time, but because of the annoying requirements needed to publish on iOS, we had to release on Android first to meet the announcement date of April. iOS proved to be a big headache, since you needed to do all the publishing stuff on Xcode to get it up on the store, which you can only do on a Mac (which I didn’t own). I had to borrow someone else’s, and even after doing all of the publishing setup on Xcode and submitting it for review, I couldn’t get it up because it would crash on certain iPad models. We didn’t even want to put the game on iPad, so I had a bit of a back and forth with an App Store representative before I opted to give up, since I knew nothing about Godot Engine to iPad optimization, nor did I have an iPad to test with.
 
 The Play Store was much more cooperative, with the build we submitted being approved in less than a week, and subsequent updates being approved almost instantly.
 
@@ -54,8 +54,8 @@ I’ll keep this section simple:
 
 -Core gameplay loop matters more than additional features, dedicate more time to getting it right.
 
--Don’t underestimate marketing/leave it to the last minute. Get the name out there and build an audience before you release (admittedly harder for mobile games lmao).
+-Don’t underestimate marketing/leave it to the last minute. Get the name out there and build an audience before you release (admittedly harder for mobile games to be fair).
 
-I hope this is even a little bit insightful to someone! My memory is a bit hazy since it has been a couple years since we’ve touched the project, but I’ll do my best to answer any questions you may have!
+I hope this was even a little bit insightful to someone! My memory is a bit hazy since it has been a couple years since we’ve touched the project, but feel free to reach out with any questions you may have.
 
-Here's a link to the game: [play.google.com/.../kalindis](https://play.google.com/store/apps/details?id=com.nahar.kalindis&hl=en&gl=US)
+Here's a link to the game if you'd like to try it out yourself: [play.google.com/.../kalindis](https://play.google.com/store/apps/details?id=com.nahar.kalindis&hl=en&gl=US)
