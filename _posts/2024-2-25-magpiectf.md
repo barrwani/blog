@@ -3,6 +3,8 @@ layout: post
 title:  MagpieCTF
 categories: [ctf, crypto]
 ---
+{%- include mathjax.html -%}
+
 
 I recently got the chance to take part in a CTF Event hosted by the Information Security Club from the [University of Calgary](https://magpiectf.ca/) with the [OSIRIS Lab](https://osiris.cyber.nyu.edu/). Here are my writeups for a couple of the challenges I solved. 
 
