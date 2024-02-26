@@ -4,26 +4,19 @@ title: About
 permalink: /about/
 ---
 
-[Reverie](https://github.com/amitmerchant1990/reverie) is a Jekyll theme which is simple and opinionated. It's actually a fork of [jekyll-now](https://github.com/barryclark/jekyll-now) with some additional features and personal touches which I've implemented to suit my needs for [my blog](https://www.amitmerchant.com).
+## barwani
 
-This is a plug-and-play Jekyll theme which you can use on GitHub Pages without even setting up a local environment.
+Co-Founded Nahar Entertainment; an indie game development studio; in late 2019 [nahar.dev](https://nahar.dev/).
 
-## Features
+Currently leading a team of 15 as a Project Manager and Lead Developer for the studio, as well as taking a Bachelor of Arts in Computer Science and Linguistics at NYU's College of Arts & Sciences.
 
-- Command-line free fork-first workflow, using GitHub.com to create, customize and post to your blog
-- Fully responsive and mobile optimized base theme
-- Sass/Coffeescript support using Jekyll 2.0
-- Free hosting on your GitHub Pages user site
-- All the SEO goodies comes in-built
-- Markdown blogging
-- Syntax highlighting using Pygments
-    - [Dracula syntax theme](https://draculatheme.com/) included
-- Disqus commenting
-- Google Analytics integration
-- Fuzzy search across blog posts
-- Pagination of posts works out-of-the-box.
-- Categorize posts out-of-the box
-- RSS Feed
-- In-built sitemap
+For my portfolio: [barwani.eu.org](http://barwani.eu.org/)
 
-Learn more about it [here](https://github.com/amitmerchant1990/reverie) on how to get started.
+For my itch.io: [barwani.itch.io](https://barwani.itch.io)
+
+Lab member of NYU's [OSIRIS Cybersecurity Lab](https://osiris.cyber.nyu.edu/).
+
+
+## The Blog
+
+This blog is where I share my CTF writeups, devlogs, postmortems, tutorials, and anything else I feel it worth posting here. Contact me at: asaad[dot]barwani[at]gmail[dot]com :)
