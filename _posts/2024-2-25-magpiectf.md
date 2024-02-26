@@ -74,7 +74,7 @@ The basic steps of ECDSA are as follows:
 - Select a random nonce <span>k</span> from <span>$[1,n-1]$</span>
 - Compute a point <span>$P= kG$</span>
 - Set <span>$r$</span> as the <span>$x$</span>-coord of <span>$P \text{ mod }n$</span>
-- Compute <span>$s= k^{-1} (H(m)+dr) \text{ mod } n$</span>, where <span>$H(m)$</span> is the hash of  message <span>m</span>
+- Compute <span>$s=  \frac{(H(m)+dr)}{k} \text{ mod } n$</span>, where <span>$H(m)$</span> is the hash of  message <span>m</span>
 
 
 I looked into common ECDSA exploits, and when looking through the `signature.py` script you find that they're using the same (hidden) <span>$k$</span> nonce on two different messages (the hints). The nonce is only meant to be used once (its in the name, number once...), so reusing it leads to a major vulnerability.
