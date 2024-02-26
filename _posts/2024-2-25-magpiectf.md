@@ -83,7 +83,7 @@ We have two signatures for two messages, and our public key $Q=dG$, we can get t
 <span>$s_1 = k^{-1}(H(m_1)+dr) \text{ mod }n$</span>
 <span>$s_2 = k^{-1}(H(m_2)+dr) \text{ mod }n$</span>
 
-<span> $d = (r(s_1-s_2))^{-1} * (s_2 * H(m_1)- s_1 * (H(m_2)) \text{ mod }n$ </span>
+<span> $d =  \frac{(s_2 \cdot H(m_1)- s_1 \cdot (H(m_2)) \text{ mod }n}{(r(s_1-s_2))}$ </span>
 
 As this is a known issue, there was some readily available code to use: [Marsh61/ECDSA-Nonce-Reuse-Exploit-Example](https://github.com/Marsh61/ECDSA-Nonce-Reuse-Exploit-Example)
 
