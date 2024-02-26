@@ -82,6 +82,7 @@ I looked into common ECDSA exploits, and when looking through the `signature.py`
 We have two signatures for two messages, and our public key $Q=dG$, we can get two equations and solve for <span>$d$</span>:
 
 <span>$s_1 = k^{-1}(H(m_1)+dr) \text{ mod }n$</span>
+
 <span>$s_2 = k^{-1}(H(m_2)+dr) \text{ mod }n$</span>
 
 $$d =  \frac{(s_2 \cdot H(m_1)- s_1 \cdot (H(m_2)) \text{ mod }n}{(r(s_1-s_2))}$$
