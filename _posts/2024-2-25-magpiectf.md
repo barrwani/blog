@@ -80,6 +80,7 @@ The basic steps of ECDSA are as follows:
 I looked into common ECDSA exploits, and when looking through the `signature.py` script you find that they're using the same (hidden) <span>$k$</span> nonce on two different messages (the hints). The nonce is only meant to be used once (its in the name, number once...), so reusing it leads to a major vulnerability.
 
 We have two signatures for two messages, and our public key $Q=dG$, we can get two equations and solve for <span>$d$</span>:
+
 <span>$s_1 = k^{-1}(H(m_1)+dr) \text{ mod }n$</span>
 <span>$s_2 = k^{-1}(H(m_2)+dr) \text{ mod }n$</span>
 
