@@ -61,6 +61,7 @@ In this challenge, we're given `server.py` and `signature.py`, and when we netca
 The basic setup is an ECDSA (Elliptic Curve Digital Signature Algorithm) where you're given a public key pair <span>$(x,y)$</span>, two hashed messages `hint`, which are basically just random alphabet strings hashed using some hidden hash function, and `signatures` with the 2 signature pairs for those messages.
 
 Within the `signature.py` code we have:
+
 `$p = 1157920892103562487626974469494075735300861434152903141955`
 
 `G = ECC.EccPoint(0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296, 0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5, 'P-256')` (base point)
@@ -74,7 +75,7 @@ The basic steps of ECDSA are as follows:
 - Select a random nonce <span>k</span> from <span>$[1,n-1]$</span>
 - Compute a point <span>$P= kG$</span>
 - Set <span>$r$</span> as the <span>$x$</span>-coord of <span>$P \text{ mod }n$</span>
-- Compute <span>$s=  \frac{(H(m)+dr)}{k} \text{ mod } n$</span>, where <span>$H(m)$</span> is the hash of  message <span>m</span>
+- Compute <span>$s=  \frac{(H(m)+dr)}{k} \text{ mod } n$</span>, where <span>$H(m)$</span> is the hash of  message $m$
 
 
 I looked into common ECDSA exploits, and when looking through the `signature.py` script you find that they're using the same (hidden) <span>$k$</span> nonce on two different messages (the hints). The nonce is only meant to be used once (its in the name, number once...), so reusing it leads to a major vulnerability.
