@@ -38,7 +38,9 @@ Again, the capital letters spell out: DES
 Put `hAw/K6MmSM7xIzM4VI992XDN5FkOKSf4saUjaQgKJEx1CPl5gz4/pvMJYS1JZz093tHCNKPT
 xBAu88euRwcK7Lv07vN2rCG+6Hmh1Cmz2Z4=` through a DES decrypter with no key:
 
-```tHe father Is paraLLel to the founder. 22 3 9 6; eevogs{nizy135_wjzpsk3_1791}```
+```
+tHe father Is paraLLel to the founder. 22 3 9 6; eevogs{nizy135_wjzpsk3_1791}
+```
 
 We finally have a flag (kind of).
 
