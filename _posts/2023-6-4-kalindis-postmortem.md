@@ -3,7 +3,7 @@ layout: post
 title:  Reflecting on our first 'major' release - Kalindis Postmortem
 categories: [gamedev, postmortem]
 ---
-
+## Introduction
 Kalindis is a mobile game my indie game 'studio', Nahar Studios (https://nahar.dev/) released back in April of 2021. It was our first (and currently only) 'major' (relative to what we've made before) release as a studio and garnered around 50 downloads (not bad for a first project!) and an average 4.9 stars on the Play Store. The game revolved around a jellyfish trying to escape the growing darkness rising below, and the main mechanic to do so involved collecting stars to replenish your jumps, as you’d lose them every time you jumped. The goal for this project was to get used to making a larger scale project as a team, as we’d typically made game jam projects and never dipped our toes into anything that took longer than week to make.
 
 I’m writing a post-mortem now because I feel like I never actually reflected on the project post-release, and we’re struggling to get another big project started up so it may give us some insight as to what worked well and what didn’t the first time. Hopefully this is insightful to any other hobbyist game devs, especially those who are still getting started out on bigger, non-jam projects, or interested in journeying into mobile game dev.
