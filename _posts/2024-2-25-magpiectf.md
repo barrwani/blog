@@ -3,7 +3,6 @@ layout: post
 title:  MagpieCTF
 categories: [CTF, crypto]
 ---
-# MagpieCTF Writeups
 
 I recently got the chance to take part in a [CTF](https://magpiectf.ca/) hosted by the Information Security Club from the University of Calgary with the [OSIRIS Lab](https://osiris.cyber.nyu.edu/). Here are my writeups for the challenges I solved. 
 
